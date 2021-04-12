@@ -30,21 +30,7 @@ generateBtn.addEventListener("click", writePassword);
 
 function getCriteria(){
   passwordlengthF();
-  // includeUpper();
-  //  includeLower();
-  //  includeSpecial();
-  //  includeNumbers();
-  // generatePassword();
- 
 }
-
-// function filterCriteria(){
-// let initialPassword = empty;
-
-
-// password.value = generatePassword(passwordLength.value, initialPassword)
-
-// }
 
 function generatePassword(){
   // includeUpper();
@@ -52,10 +38,10 @@ function generatePassword(){
   //  includeSpecial();
   //  includeNumbers();
 
-  var newUpper =confirm("uppercase?")
-   var newLower =confirm("lowercase?")
-   var newNumber =confirm("Numbers?")
-   var newSymbol =confirm("Symbols?")
+  var newUpper =confirm("Include uppercase characters? Press 'OK' to Include and 'Cancel' to exclude")
+   var newLower =confirm("Include lowercase characters? Press 'OK' to Include and 'Cancel' to exclude")
+   var newNumber =confirm("Include Numbers? Press 'OK' to Include and 'Cancel' to exclude")
+   var newSymbol =confirm("Include Symbols? Press 'OK' to Include and 'Cancel' to exclude")
 //  console.log(newUpper)
   var allowed = ''
   if (newUpper === true){
@@ -84,19 +70,20 @@ function generatePassword(){
 
   //allowed += lowerCaseSet
   //allowed += numberSet
-  console.log("77777777")
-  console.log(allowed)
-  console.log("77777777")
+
+
+  // For loop that generates random password based on lenth of passwordLength. It uses math.random to pull a random character out of the string and then add it to the password.
+  
    var pass ='';
-   for (let i = 1; i < passwordLength; i++){
+   for (let i = 0; i < passwordLength; i++){
       var nextChar = Math.floor(Math.random() * allowed.length);
       //console.log("+++5+++")
       //console.log(allowed)
       pass += allowed[nextChar]
       console.log(pass)
-      console.log("underhere")
-      console.log(allowed)
-      console.log("abovehere")
+      //console.log("underhere")
+     // console.log(allowed)
+     // console.log("abovehere")
    }
    return pass;
    
@@ -116,7 +103,7 @@ function passwordlengthF () {
 
     if (passwordLength > 128 || passwordLength < 8) prompt("Your password does not meet the length requirement")
 
-  // if (isNaN(passwordLength)) prompt("Please enter a numerical value between 8-128 characters")
+   if (isNaN(passwordLength)) prompt("Please enter a numerical value between 8-128 characters")
 
     
    parseInt('passwordLength', 10)
